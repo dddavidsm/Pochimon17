@@ -1,5 +1,4 @@
 package model;
-
 import java.util.ArrayList;
 
 public class Type {
@@ -17,8 +16,8 @@ public class Type {
     public void setType(TypeEnum type) { this.type = type; }
 
     public ArrayList<TypeEnum> getEffectiveAgainst() { return effectiveAgainst; }
-    public void setEffectiveAgainst(ArrayList<TypeEnum> effectiveAgainst) { this.effectiveAgainst = effectiveAgainst; }
-
     public ArrayList<TypeEnum> getWeakAgainst() { return weakAgainst; }
-    public void setWeakAgainst(ArrayList<TypeEnum> weakAgainst) { this.weakAgainst = weakAgainst; }
+
+    public void addEffectiveAgainst(TypeEnum t) { effectiveAgainst.add(t); }
+    public void addWeakAgainst(TypeEnum t) { weakAgainst.add(t); }
 }

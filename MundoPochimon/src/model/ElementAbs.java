@@ -1,4 +1,5 @@
 package model;
+
 public abstract class ElementAbs {
     private String name;
     private int exp;
@@ -23,4 +24,18 @@ public abstract class ElementAbs {
 
     public int getExpToNextLevel() { return expToNextLevel; }
     public void setExpToNextLevel(int expToNextLevel) { this.expToNextLevel = expToNextLevel; }
+
+    public void gainExp(int amount) {
+        this.exp += amount;
+        if (this.exp >= this.expToNextLevel) {
+            levelUp();
+        }
+    }
+
+    public void levelUp() {
+        this.level++;
+        this.exp = 0;
+        this.expToNextLevel += 50; // Exemple de creixement
+        System.out.println(name + " ha pujat de nivell! Ara és nivell " + level);
+    }
 }
